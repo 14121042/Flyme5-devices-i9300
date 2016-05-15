@@ -3975,6 +3975,8 @@
 
     move-result-object v6
 
+    const-string v6, "mobile_data"
+
     invoke-static {v2, v6}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4058,6 +4060,10 @@
 
     :cond_1
     invoke-static {v2, v6, v5}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    const-string v6, "mobile_data"
+ 
+    invoke-static {v2, v6, v5}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
     :try_end_1
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -4128,6 +4134,8 @@
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
+
+    const-string v6, "data_roaming"
 
     invoke-static {v2, v6}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
     :try_end_0
@@ -4210,6 +4218,10 @@
 
     :goto_2
     invoke-static {v2, v6, v4}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    const-string v6, "data_roaming"
+ 
+    invoke-static {v2, v6, v4}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+ 
     :try_end_1
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -7417,6 +7429,10 @@
     :goto_0
     invoke-static {v3, v4, v0}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    const-string v4, "mobile_data"
+
+    invoke-static {v3, v4, v0}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
     .line 1412
     invoke-virtual {p0}, Lcom/android/internal/telephony/dataconnection/DcTrackerBase;->getDataOnRoamingEnabled()Z
 
@@ -7918,6 +7934,10 @@
     :goto_0
     invoke-static {v0, v2, v1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    const-string v2, "data_roaming"
+
+    invoke-static {v0, v2, v1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+ 
     .line 785
     .end local v0    # "resolver":Landroid/content/ContentResolver;
     :cond_0
